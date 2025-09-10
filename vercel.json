@@ -1,28 +1,41 @@
-# Vercel Deployment Configuration
-
-This file tells Vercel how to build and deploy this Next.js application.
-
-## Build Settings
-
-- **Framework**: Next.js
-- **Build Command**: `npm run build`
-- **Output Directory**: `.next`
-- **Install Command**: `npm install`
-
-## Environment Variables
-
-No environment variables are required for basic deployment.
-
-## Performance Optimizations
-
-- Image optimization enabled
-- Font optimization with Google Fonts
-- Bundle optimization for production
-- Console removal in production builds
-
-## Deployment Notes
-
-1. This project uses Next.js App Router
-2. All pages are server-side rendered for optimal SEO
-3. Static assets are optimized for CDN delivery
-4. TypeScript compilation is handled automatically
+{
+  "name": "rally-website",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "functions": {
+    "src/app/**/*.tsx": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
