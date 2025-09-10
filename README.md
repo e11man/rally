@@ -18,7 +18,7 @@ A modern, responsive business consulting website built with Next.js, TypeScript,
 - **Styling**: Tailwind CSS
 - **UI Components**: Custom component library with CVA
 - **Fonts**: Inter (Google Fonts)
-- **Deployment**: Vercel
+- **Deployment**: Vercel trying to make sure its good o rvcerlc
 
 ## Getting Started
 
