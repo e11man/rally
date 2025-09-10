@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { Typography } from '@/components/ui/Typography';
 import { ServiceCard } from '@/modules/services/ServiceCard';
 import { services } from '@/data/content';
+import { Button } from '@/components/ui/Button';
 
 export default function ServicesPage() {
   return (
@@ -37,12 +38,13 @@ export default function ServicesPage() {
           <Typography variant="body" className="text-text-secondary mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss how our services can help you achieve your business goals and drive sustainable growth.
           </Typography>
-          <button
+          <Button
             onClick={() => window.location.href = '/contact'}
-            className="bg-primary-main text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors"
+            variant="primary"
+            size="lg"
           >
             Get Started Today
-          </button>
+          </Button>
         </div>
       </Container>
     </div>

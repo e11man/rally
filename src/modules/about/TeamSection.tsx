@@ -38,6 +38,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({
               <CardHeader>
                 <div className="w-24 h-24 bg-accent-main/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   {member.avatar ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img 
                       src={member.avatar} 
                       alt={member.name}
